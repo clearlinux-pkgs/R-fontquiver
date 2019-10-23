@@ -4,7 +4,7 @@
 #
 Name     : R-fontquiver
 Version  : 0.2.1
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/fontquiver_0.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fontquiver_0.2.1.tar.gz
 Summary  : Set of Installed Fonts
@@ -12,9 +12,12 @@ Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-fontBitstreamVera
 Requires: R-fontLiberation
+Requires: R-htmltools
 BuildRequires : R-fontBitstreamVera
 BuildRequires : R-fontLiberation
+BuildRequires : R-htmltools
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 # fontquiver
@@ -28,13 +31,13 @@ useful for packages that needs controlled versions of fonts.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1560786244
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571831788
 
 %install
-export SOURCE_DATE_EPOCH=1560786244
+export SOURCE_DATE_EPOCH=1571831788
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -63,7 +66,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
