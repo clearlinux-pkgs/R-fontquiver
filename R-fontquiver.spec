@@ -4,7 +4,7 @@
 #
 Name     : R-fontquiver
 Version  : 0.2.1
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/fontquiver_0.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fontquiver_0.2.1.tar.gz
 Summary  : Set of Installed Fonts
